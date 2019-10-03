@@ -1,0 +1,28 @@
+.notfound-bg {
+    /* The image used */
+    background-image: url("../../Assets//NotFoundBG.jpg");
+   
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.notfound-text {
+    margin: 0;
+position: absolute;
+top: 50%;
+left: 50%;
+margin-right: -50%;
+transform: translate(-50%, -50%); 
+display: flex;
+}
+
+
+.background-opacity {
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100%;
+}
