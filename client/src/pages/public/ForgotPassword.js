@@ -1,11 +1,34 @@
 import React, { Component } from 'react'
-import { AppBar, Toolbar, Container, Typography, TextField, Grid, Button } from '@material-ui/core'
+import { AppBar, Toolbar, Container, Typography, TextField, Grid, Button, Snackbar, IconButton } from '@material-ui/core'
 import { Link } from 'react-router-dom';
+import CloseIcon from '@material-ui/icons/Close';
 
 export class ForgotPassword extends Component {
     render() {
         return (
             <div>
+                <Snackbar
+                    anchorOrigin={{
+                        vertical: "bottom",
+                        horizontal: "center",
+                    }}
+                    open={true}
+                    autoHideDuration={6000}
+                    message={
+                        <span>This page is under construction</span>
+                    }
+                    // onClose={this.closeErrorDialogue.bind(this)}
+                    action={[
+                        <IconButton
+                            aria-label="close"
+                            color="primary"
+                        // onClick={this.closeErrorDialogue.bind(this)}
+                        >
+                            <CloseIcon />
+                        </IconButton>
+                    ]}
+                >
+                </Snackbar>
                 <AppBar color="secondary">
                     <Toolbar>
                         <Container>

@@ -47,6 +47,7 @@ export class UserRegister extends Component {
         this.setState({ loading: true })
         if (this.state.password !== this.state.confirmPassword) {
             this.setState({ loginError: "Passwords do not match", loading: false })
+            return;
         }
         const user = {
             name: this.state.username,
