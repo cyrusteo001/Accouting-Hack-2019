@@ -22,7 +22,7 @@ export default function NotFound() {
                     </Container>
                 </Toolbar>
             </AppBar>
-            <div style={{ height: "100vh" }}>
+            <div style={{ height: "100vh" }} data-aos="fade">
 
                 <div className="notfound-bg">
                     <div className="background-opacity">

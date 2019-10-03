@@ -21,10 +21,15 @@ export class LandingPage extends Component {
                                     About
                                 </Typography>
                             </Link>
+                            <Link to="/user/login" style={{ textDecoration: "none", marginLeft: "auto" }}>
+                                <Typography variant="h6" color="textSecondary" style={{ marginLeft: 10 }}>
+                                    Login
+                                </Typography>
+                            </Link>
                         </Container>
                     </Toolbar>
                 </AppBar>
-                <div>
+                <div >
                     <div className="landing-bg">
                     </div>
 
@@ -33,7 +38,7 @@ export class LandingPage extends Component {
                             <source src={require('../../Assets/Landing.mp4')} type="video/mp4" />
                         </video>
                     </div>
-                    <Grid container spacing={0} className="landing-title text-center" >
+                    <Grid data-aos="fade" data-aos-duration="1000" container spacing={0} className="landing-title text-center" >
                         <Grid item xs={12}>
                             <h1>Accounting Hack 2019</h1>
                         </Grid>
@@ -44,16 +49,18 @@ export class LandingPage extends Component {
                             <h2>I am a...</h2>
                         </Grid>
                         <Grid item xs={12} justify="center">
-                            <Button variant="contained" color="secondary" style={{ marginRight: 20, width: 150, height: 60, fontSize: 20 }}>
-                                <Link to="/user/login" style={{ textDecoration: "none", color: "#444" }}>
+                            <Link to="/user/login" style={{ textDecoration: "none", color: "#444" }}>
+                                <Button variant="contained" color="secondary" style={{ marginRight: 20, width: 150, height: 60, fontSize: 20 }}>
+
                                     Freelancer
-                                </Link>
+
                             </Button>
-                            <Button variant="contained" color="primary" style={{ marginLeft: 20, width: 150, height: 60, fontSize: 20 }}>
-                                <Link to="/corporate/login" style={{ textDecoration: "none", color: "white" }} >
+                            </Link>
+                            <Link to="/corporate/login" style={{ textDecoration: "none", color: "white" }} >
+                                <Button variant="contained" color="primary" style={{ marginLeft: 20, width: 150, height: 60, fontSize: 20 }}>
                                     Hirer
-                                </Link>
                             </Button>
+                            </Link>
                         </Grid>
                     </Grid>
 

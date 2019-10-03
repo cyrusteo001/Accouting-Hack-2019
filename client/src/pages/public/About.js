@@ -23,8 +23,8 @@ export class About extends Component {
                         </Container>
                     </Toolbar>
                 </AppBar>
-                <div className="about-bg" >
-                    <div className="about-opacity" style={{ paddingTop: 100, paddingBottom: 50 }}>
+                <div className="about-bg">
+                    <div className="about-opacity" data-aos="fade" data-aos-duration="1000" style={{ paddingTop: 100, paddingBottom: 50 }}>
                         <Container>
                             <Paper elevation={10} style={{ padding: 10 }}>
                                 <Typography variant="h4" color="textSecondary">
@@ -47,7 +47,7 @@ export class About extends Component {
                         </Container>
                     </div>
                 </div>
-                <Container>
+                <Container data-aos="fade" data-aos-duration="1000">
                     <Paper elevation={5} style={{ padding: 10, marginTop: 30 }}>
                         <Typography variant="h4" color="textSecondary">
                             Our team
@@ -55,7 +55,7 @@ export class About extends Component {
                         <Grid container direction="row" justify="center" style={{ paddingTop: 20 }}>
                             <Grid item md={3}>
                                 <div className="profile-container">
-                                    <img src={require('../../Assets/guohui.jpg')} className="profile-picture" />
+                                    <img src={require('../../Assets/guohui.jpg')} className="profile-picture" alt="" />
                                     <Typography variant="h5" align="center" color="textSecondary" style={{ paddingTop: 10 }}>
                                         Teo Guo Hui
                                 </Typography>
@@ -66,7 +66,7 @@ export class About extends Component {
                             </Grid>
                             <Grid item md={3}>
                                 <div className="profile-container">
-                                    <img src={require('../../Assets/zhiwei.jpg')} className="profile-picture" />
+                                    <img src={require('../../Assets/zhiwei.jpg')} className="profile-picture" alt="" />
                                     <Typography variant="h5" align="center" color="textSecondary" style={{ paddingTop: 10 }}>
                                         Chin Zhi Wei
                                 </Typography>
@@ -77,7 +77,7 @@ export class About extends Component {
                             </Grid>
                             <Grid item md={3}>
                                 <div className="profile-container">
-                                    <img src={require('../../Assets/cyrus.jpg')} className="profile-picture" />
+                                    <img src={require('../../Assets/cyrus.jpg')} className="profile-picture" alt="" />
                                     <Typography variant="h5" align="center" color="textSecondary" style={{ paddingTop: 10 }}>
                                         Cyrus Teo
                                 </Typography>
@@ -88,7 +88,7 @@ export class About extends Component {
                             </Grid>
                             <Grid item md={3}>
                                 <div className="profile-container">
-                                    <img src={require('../../Assets/nigel.jpg')} className="profile-picture" />
+                                    <img src={require('../../Assets/nigel.jpg')} className="profile-picture" alt="" />
                                     <Typography variant="h5" align="center" color="textSecondary" style={{ paddingTop: 10 }}>
                                         Nigel Lee
                                 </Typography>

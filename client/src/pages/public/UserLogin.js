@@ -1,11 +1,44 @@
 import React, { Component } from 'react'
-import { AppBar, Toolbar, Container, Typography, TextField, Grid, Button } from '@material-ui/core'
+import { AppBar, Toolbar, Container, Typography, TextField, Grid, Button, Snackbar, IconButton } from '@material-ui/core'
+import CloseIcon from '@material-ui/icons/Close';
 import { Link } from 'react-router-dom';
 
 export class UserLogin extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            loginError: false
+        }
+    }
+
+    closeErrorDialogue() {
+        this.setState({ loginError: false })
+    }
     render() {
         return (
             <div>
+                <Snackbar
+                    anchorOrigin={{
+                        vertical: "bottom",
+                        horizontal: "center",
+                    }}
+                    open={this.state.loginError}
+                    autoHideDuration={6000}
+                    message={
+                        <span>Login Error</span>
+                    }
+                    onClose={this.closeErrorDialogue.bind(this)}
+                    action={[
+                        <IconButton
+                            aria-label="close"
+                            color="primary"
+                            onClick={this.closeErrorDialogue.bind(this)}
+                        >
+                            <CloseIcon />
+                        </IconButton>
+                    ]}
+                >
+                </Snackbar>
                 <AppBar color="secondary">
                     <Toolbar>
                         <Container>
@@ -15,10 +48,11 @@ export class UserLogin extends Component {
                         </Container>
                     </Toolbar>
                 </AppBar>
-                <Container style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+                <Container style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", height: "100vh" }}
+                    data-aos="fade" data-aos-duration="1000">
 
 
-                    <form noValidate>
+                    <form >
                         <Grid container spacing={2}>
                             <Grid item xs={6}>
                                 <Typography variant="h4" color="textSecondary">
@@ -36,7 +70,7 @@ export class UserLogin extends Component {
                                 <TextField
                                     required
                                     variant="outlined"
-                                    label="Username / Email"
+                                    label="Username"
                                     margin="normal"
                                     fullWidth
                                 />
@@ -55,14 +89,16 @@ export class UserLogin extends Component {
                                 <Button variant="contained" color="primary" size="large" style={{ marginRight: 10, marginTop: 10 }}>
                                     Login
                                 </Button>
-                                <Button variant="outlined" size="large" style={{ marginRight: 10, marginTop: 10 }}>
-                                    <Link to="/user/register" style={{ textDecoration: "none", color: "#888" }}>
+                                <Link to="/user/register" style={{ textDecoration: "none", color: "#888" }}>
+                                    <Button variant="outlined" size="large" style={{ marginRight: 10, marginTop: 10 }}>
                                         Register
-                                    </Link>
                                 </Button>
-                                <Button variant="outlined" color="primary" size="large" style={{ marginTop: 10 }}>
-                                    Forgot Password
+                                </Link>
+                                <Link to="/forgotpassword" style={{ textDecoration: "none" }}>
+                                    <Button variant="outlined" color="primary" size="large" style={{ marginTop: 10 }}>
+                                        Forgot Password
                                 </Button>
+                                </Link>
                             </Grid>
                         </Grid>
                     </form>

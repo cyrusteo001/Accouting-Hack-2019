@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { AppBar, Toolbar, Container, Typography, TextField, Grid, Button } from '@material-ui/core'
 import { Link } from 'react-router-dom';
 
-export class UserRegister extends Component {
+export class ForgotPassword extends Component {
     render() {
         return (
             <div>
@@ -10,21 +10,28 @@ export class UserRegister extends Component {
                     <Toolbar>
                         <Container>
                             <Typography variant="h6" color="textSecondary">
-                                User Registration
+                                Reset Password
                             </Typography>
                         </Container>
                     </Toolbar>
                 </AppBar>
                 <Container style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", height: "100vh" }}
-                    data-aos="fade" data-aos-duration="1000"
-                >
+                    data-aos="fade" data-aos-duration="1000">
 
-                    <form noValidate>
+
+                    <form >
                         <Grid container spacing={2}>
-                            <Grid item xs={12}>
+                            <Grid item xs={6}>
                                 <Typography variant="h4" color="textSecondary">
-                                    Register with us today!
+                                    Reset my password
                                 </Typography>
+                            </Grid>
+                            <Grid item xs={6}>
+                                <Link to="/" style={{ textDecoration: "none" }}>
+                                    <Typography variant="h6" color="textSecondary" style={{ textAlign: "end", paddingTop: 7 }}>
+                                        Back to home
+                                </Typography>
+                                </Link>
                             </Grid>
                             <Grid item xs={12}>
                                 <TextField
@@ -56,23 +63,23 @@ export class UserRegister extends Component {
                                 />
                             </Grid>
                             <Grid item xs={12}>
-                                <Button variant="contained" color="primary" size="large" style={{ marginRight: 10 }}>
-                                    Register
+                                <Button variant="contained" color="primary" size="large" style={{ marginRight: 10, marginTop: 10 }}>
+                                    Reset Password
                                 </Button>
 
                                 <Link to="/user/login" style={{ textDecoration: "none", color: "#888" }}>
-                                    <Button variant="outlined" size="large" style={{ marginRight: 10 }}>
-                                        Back to Login
-
+                                    <Button variant="outlined" size="large" style={{ marginRight: 10, marginTop: 10 }}>
+                                        Back to login
                                 </Button>
                                 </Link>
                             </Grid>
                         </Grid>
                     </form>
+
                 </Container>
             </div>
         )
     }
 }
 
-export default UserRegister
+export default ForgotPassword
