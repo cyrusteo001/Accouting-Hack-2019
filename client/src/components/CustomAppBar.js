@@ -34,7 +34,7 @@ export default function CustomAppBar() {
 
     return (
         <div className={classes.root}>
-            <AppBar color="primary">
+            <AppBar color="primary" position="fixed">
                 <Toolbar variant="dense">
                     <IconButton edge="start" color="secondary" className={classes.menuButton} aria-label="menu">
                         <MenuIcon />
@@ -48,6 +48,7 @@ export default function CustomAppBar() {
                         aria-haspopup="true"
                         onClick={handleMenu}
                         color="inherit"
+
                     >
                         <AccountCircle />
                     </IconButton>

@@ -38,19 +38,25 @@ export class LandingPage extends Component {
                             <source src={require('../../Assets/Landing.mp4')} type="video/mp4" />
                         </video>
                     </div>
-                    <Grid data-aos="fade" data-aos-duration="1000" container spacing={0} className="landing-title text-center" >
+                    <Grid data-aos="fade" data-aos-duration="1000" container spacing={1} className="landing-title text-center" >
                         <Grid item xs={12}>
-                            <h1>Accounting Inovation Challenge 2019</h1>
+                            <Typography variant="h4">
+                                Accounting Inovation Challenge 2019
+                            </Typography>
                         </Grid>
                         <Grid item xs={12}>
-                            <h1>Optimising human resource for accounting firms</h1>
+                            <Typography variant="h4">
+                                Optimising human resource for accounting firms
+                                </Typography>
                         </Grid>
                         <Grid item xs={12}>
-                            <h2>I am a...</h2>
+                            <Typography variant="h4" style={{ marginTop: 40, marginBottom: 10 }}>
+                                I am a...
+                            </Typography>
                         </Grid>
-                        <Grid item xs={12} justify="center">
+                        <Grid item xs={12} >
                             <Link to="/user/login" style={{ textDecoration: "none", color: "#444" }}>
-                                <Button variant="contained" color="secondary" style={{ marginRight: 20, width: 150, height: 60, fontSize: 20 }}>
+                                <Button variant="contained" color="secondary" style={{ marginRight: 20, width: 160, height: 60, fontSize: 20 }}>
 
                                     Freelancer
 

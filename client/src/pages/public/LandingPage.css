@@ -23,9 +23,15 @@
    
     /* Full height */
     height: 100vh;
+
   
     /* Center and scale the image nicely */
-    background-position: center;
+    position: fixed;
+    top:0;
+    bottom:0;
+    right:0;
+    left: 0;
+    background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
 }

@@ -53,7 +53,7 @@ export class About extends Component {
                     </div>
                 </div>
                 <Container data-aos="fade" data-aos-duration="1000">
-                    <Paper elevation={5} style={{ padding: 10, marginTop: 30 }}>
+                    <Paper elevation={5} style={{ padding: 10, marginTop: 30, marginBottom: 30 }}>
                         <Typography variant="h4" color="textSecondary">
                             Our team
                         </Typography>

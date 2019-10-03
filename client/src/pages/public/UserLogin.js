@@ -1,22 +1,84 @@
 import React, { Component } from 'react'
-import { AppBar, Toolbar, Container, Typography, TextField, Grid, Button, Snackbar, IconButton } from '@material-ui/core'
+import { Link, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { loginUser } from '../../redux/actions/authActions';
+import {
+    AppBar,
+    Toolbar,
+    Container,
+    Typography,
+    TextField,
+    Grid,
+    Button,
+    Snackbar,
+    IconButton,
+    CircularProgress
+} from '@material-ui/core'
 import CloseIcon from '@material-ui/icons/Close';
-import { Link } from 'react-router-dom';
+
 
 export class UserLogin extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            loginError: false
+            loginError: this.props.error,
+            loading: false,
+            login: false,
+            username: "",
+            password: ""
         }
     }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.error) {
+            this.setState({ loginError: nextProps.error })
+        }
+        if (!nextProps.loading) {
+            this.setState({ loading: false })
+        }
+        if (nextProps.loading) {
+            this.setState({ loading: true })
+        }
+        if (nextProps.isLoggedIn) {
+            this.setState({ login: true })
+            this.props.history.push('/user/dashboard')
+        }
+    }
+
 
     closeErrorDialogue() {
         this.setState({ loginError: false })
     }
+
+    handleChange(e) {
+        e.preventDefault();
+        this.setState({ [e.target.name]: e.target.value })
+    }
+
+    handleSubmit() {
+        this.setState({ loading: true })
+        const user = {
+            name: this.state.username,
+            password: this.state.password
+        }
+
+        this.props.loginUser(user)
+    }
+
+    renderLoadingScreen() {
+        if (this.state.loading) {
+            return (
+                <div className="loading-screen">
+                    <CircularProgress color="secondary" />
+                </div>
+            )
+        }
+    }
+
     render() {
         return (
             <div>
+                {this.renderLoadingScreen()}
                 <Snackbar
                     anchorOrigin={{
                         vertical: "bottom",
@@ -25,7 +87,7 @@ export class UserLogin extends Component {
                     open={this.state.loginError}
                     autoHideDuration={6000}
                     message={
-                        <span>Login Error</span>
+                        <span>{this.state.loginError}</span>
                     }
                     onClose={this.closeErrorDialogue.bind(this)}
                     action={[
@@ -72,7 +134,9 @@ export class UserLogin extends Component {
                                     variant="outlined"
                                     label="Username"
                                     margin="normal"
+                                    name="username"
                                     fullWidth
+                                    onChange={this.handleChange.bind(this)}
                                 />
                             </Grid>
                             <Grid item xs={12}>
@@ -82,11 +146,20 @@ export class UserLogin extends Component {
                                     label="Password"
                                     margin="normal"
                                     type="password"
+                                    name="password"
                                     fullWidth
+                                    onChange={this.handleChange.bind(this)}
                                 />
                             </Grid>
                             <Grid item xs={12}>
-                                <Button variant="contained" color="primary" size="large" style={{ marginRight: 10, marginTop: 10 }}>
+                                <Button
+                                    variant="contained"
+                                    color="primary"
+                                    size="large"
+                                    style={{ marginRight: 10, marginTop: 10 }}
+                                    onClick={this.handleSubmit.bind(this)}
+                                    type="submit"
+                                >
                                     Login
                                 </Button>
                                 <Link to="/user/register" style={{ textDecoration: "none", color: "#888" }}>
@@ -109,4 +182,9 @@ export class UserLogin extends Component {
     }
 }
 
-export default UserLogin
+const mapStateToProps = ({ auth }) => {
+    const { name, email, password, error, loading, isLoggedIn } = auth;
+    return { name, email, password, error, loading, isLoggedIn }
+};
+
+export default withRouter(connect(mapStateToProps, { loginUser })(UserLogin));
