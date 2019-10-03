@@ -24,7 +24,10 @@ export class LandingPage extends Component {
                         </Container>
                     </Toolbar>
                 </AppBar>
-                <div style={{ position: "relative" }}>
+                <div>
+                    <div className="landing-bg">
+                    </div>
+
                     <div className="responsive-video">
                         <video autoPlay muted loop className="video-item">
                             <source src={require('../../Assets/Landing.mp4')} type="video/mp4" />
@@ -53,6 +56,7 @@ export class LandingPage extends Component {
                             </Button>
                         </Grid>
                     </Grid>
+
                 </div>
             </div>
         )

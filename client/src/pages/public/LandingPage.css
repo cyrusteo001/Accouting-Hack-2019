@@ -3,9 +3,31 @@
         display: none;
     }
     .landing-title {
-        position: fixed;
-        top: 0%;
+        position: fixed;    
+        top: 0;
+        background: rgba(0, 0, 0, 0.6);
+        color: #f1f1f1;
+        width: 100%;
+        padding: 20px;
     }
+}
+
+@media only screen and (min-width: 1200px) {
+    .landing-bg {
+        display: none;
+    }
+}
+
+.landing-bg{
+    background-image: url("../../Assets//NotFoundBG.jpg");
+   
+    /* Full height */
+    height: 100vh;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .video-item{ 
