@@ -20,6 +20,11 @@ export class About extends Component {
                                     About
                                 </Typography>
                             </Link>
+                            <Link to="/user/login" style={{ textDecoration: "none", marginLeft: "auto" }}>
+                                <Typography variant="h6" color="textSecondary" style={{ marginLeft: 10 }}>
+                                    Login
+                                </Typography>
+                            </Link>
                         </Container>
                     </Toolbar>
                 </AppBar>

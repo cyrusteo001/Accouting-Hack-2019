@@ -40,7 +40,7 @@ export class LandingPage extends Component {
                     </div>
                     <Grid data-aos="fade" data-aos-duration="1000" container spacing={0} className="landing-title text-center" >
                         <Grid item xs={12}>
-                            <h1>Accounting Hack 2019</h1>
+                            <h1>Accounting Inovation Challenge 2019</h1>
                         </Grid>
                         <Grid item xs={12}>
                             <h1>Optimising human resource for accounting firms</h1>
