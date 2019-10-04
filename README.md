@@ -7,7 +7,7 @@ Our working repository for accounting hack 2019
 - authentication: Authentication server
 
 ## APIs
-#### GET users by username
+#### GET users by username /auth/user
 - Search for users when logging in
 - Request: `username, password`
 - Response: 
@@ -21,7 +21,7 @@ Our working repository for accounting hack 2019
 }
 ```
 
-#### POST create user
+#### POST create user /auth/user
 - Register user
 - Request: `username, firstName, lastName, password`
 - Reponse: 
@@ -35,7 +35,7 @@ Our working repository for accounting hack 2019
 }
 ```
 
-#### GET documents by keyword
+#### GET documents by keyword /doc/keyword
 - Search for document by keyword
 - Request: `keyword`
 - Respone:
@@ -51,7 +51,7 @@ Our working repository for accounting hack 2019
 }
 ```
 
-#### GET documents by title
+#### GET documents by title /doc/title
 - Search for document by title
 - Request: `title`
 - Response:
@@ -67,7 +67,7 @@ Our working repository for accounting hack 2019
 }
 ```
 
-#### POST set upvote / downvote count
+#### POST set upvote / downvote count /doc/vote
 - Users upvote or downvote document count
 - Request: `title, upvote (bool)` (if upvote is true, register as upvote, if false, register as downvote)
 - Reponse: 
@@ -83,7 +83,7 @@ Our working repository for accounting hack 2019
 }
 ```
 
-#### GET related keywords by keyword
+#### GET related keywords by keyword /key/keyword
 - Users can search for related keywords by keyword
 - Request: `keyword`
 - Response: 
