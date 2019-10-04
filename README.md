@@ -8,9 +8,9 @@ Our working repository for accounting hack 2019
 
 ## APIs
 #### GET users by username
-search for users when logging in
-Request: `username, password`
-Response: 
+- Search for users when logging in
+- Request: `username, password`
+- Response: 
 ```
 {
     username: "johnlee97",
